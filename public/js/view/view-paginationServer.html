@@ -1,18 +1,28 @@
 
-<div class="buttons">
-    <button class="btn--add" ng-click = "toFirst()"> < </button>
-    <button ng-click="setNumPage(but)" ng-repeat="but in buttoner" class="btn--yes separationButton">{{but}}</button>
-    <button class="btn--add" ng-click="toLast()"> > </button>
-</div>
+    <ul class="menu--blue">
+        <li class="letter3"><a href="#!/">Pagination server</a></li>
+    </ul>
+
+    <p class="separationButton"></p>
 
 
-<table class="table">
-    <tr>
-        <th>ID COUNTRY</th>
-        <th>COUNTRY</th>
-    </tr>
-    <tr ng-repeat="country in countries">
-        <td>{{country.id_country}}</td>
-        <td>{{country.country}}</td>
-    </tr>
-</table>
+    <table class="table">
+        <tr>
+            <th>ID COUNTRY</th>
+            <th>COUNTRY</th>
+        </tr>
+
+        <tr ng-repeat="country in countries track by $index">
+
+            <td>{{country.id_country}}</td>
+            <td>{{country.country}}</td>
+
+        </tr>
+
+    </table>
+
+    <div class="buttons" style="display: flex;justify-content: center; align-items: center">
+        <button class="btn--add min" ng-click = "toFirst()"> < </button>
+        <button ng-click="setNumPage(but)" ng-repeat="but in buttoner" class="btn--yes separationButton">{{but}}</button>
+        <button class="btn--add min" ng-click="toLast()"> > </button>
+    </div>
