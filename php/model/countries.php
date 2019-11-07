@@ -24,12 +24,12 @@ class countries extends DATABASE{
             /*size of rows*/
             $sizeRows = ceil($queryLength->num_rows / 5);
             $sizeRows_ = floor($queryLength->num_rows) - 5;
-            if($pages == 0 ){
+            if($pages==0){
                $pages = 0;
 
             }
             else{
-                $pages = ceil($pages * $sizeRows_ / 5)- 1;
+                $pages = ceil($pages * $sizeRows_ / 5) -1;
             }
 
 
@@ -56,34 +56,3 @@ class countries extends DATABASE{
     }
 
 }
-
-
-//$country = new countries();
-//$country->get_countries();
-//
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
