@@ -18,9 +18,19 @@ class countries extends DATABASE{
 
         try{
 
-            $sqlLengthCountries = "SELECT count(*) FROM $table";
+            $sqlLengthCountries = "SELECT * FROM $table";
+            $queryLength = $conection->query($sqlLengthCountries);
+            $sizeRows = ceil($queryLength->num_rows / 5);
 
-            $sqlStatement = "SELECT * FROM $table";
+            echo $sizeRows;
+
+
+
+
+
+
+
+            $sqlStatement = "SELECT * FROM $table LIMIT 0, $sizeRows";
             $querySql = $conection->query($sqlStatement);
 
             while($row = mysqli_fetch_array($querySql)){
@@ -43,8 +53,10 @@ class countries extends DATABASE{
 }
 
 
-$country = new countries();
-$country->get_countries();
+//$country = new countries();
+//$country->get_countries();
+//
+//
 
 
 
