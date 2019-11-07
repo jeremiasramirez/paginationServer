@@ -1,1 +1,18 @@
-<h1>Hello</h1>
+
+<div class="buttons">
+    <button class="btn--add" ng-click = "toFirst()"> < </button>
+    <button ng-repeat="but in buttoner" class="btn--yes separationButton">{{but}}</button>
+    <button class="btn--add" ng-click="toLast()"> > </button>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>ID COUNTRY</th>
+        <th>COUNTRY</th>
+    </tr>
+    <tr ng-repeat="country in countries">
+        <td>{{country.id_country}}</td>
+        <td>{{country.country}}</td>
+    </tr>
+</table>
