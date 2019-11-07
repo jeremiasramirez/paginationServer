@@ -4,4 +4,4 @@ include "../model/countries.php";
 
 
 $country = new countries();
-$country->get_countries();
+$country->get_countries(0);

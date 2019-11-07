@@ -8,7 +8,7 @@ class countries extends DATABASE{
 
 
 //    get countries
-    function get_countries(){
+    function get_countries($pages=0){
 
         $conection = parent::get_database();
         $table = "countries";
@@ -17,20 +17,24 @@ class countries extends DATABASE{
 
 
         try{
-
+            /*getting size of rows*/
             $sqlLengthCountries = "SELECT * FROM $table";
             $queryLength = $conection->query($sqlLengthCountries);
+
+            /*size of rows*/
             $sizeRows = ceil($queryLength->num_rows / 5);
+            $sizeRows_ = floor($queryLength->num_rows) - 5;
+            if($pages == 0 ){
+               $pages = 0;
 
-            echo $sizeRows;
+            }
+            else{
+                $pages = ceil($pages * $sizeRows_ / 5)- 1;
+            }
 
 
 
-
-
-
-
-            $sqlStatement = "SELECT * FROM $table LIMIT 0, $sizeRows";
+            $sqlStatement = "SELECT * FROM $table LIMIT $pages, 5";
             $querySql = $conection->query($sqlStatement);
 
             while($row = mysqli_fetch_array($querySql)){
@@ -39,7 +43,8 @@ class countries extends DATABASE{
             }
 
             echo json_encode(array(
-                "data"=>$registers
+                "data" => $registers,
+                "buttons" => $sizeRows
             ));
 
 

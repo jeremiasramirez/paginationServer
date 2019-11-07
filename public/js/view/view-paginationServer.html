@@ -1,7 +1,7 @@
 
 <div class="buttons">
     <button class="btn--add" ng-click = "toFirst()"> < </button>
-    <button ng-repeat="but in buttoner" class="btn--yes separationButton">{{but}}</button>
+    <button ng-click="setNumPage(but)" ng-repeat="but in buttoner" class="btn--yes separationButton">{{but}}</button>
     <button class="btn--add" ng-click="toLast()"> > </button>
 </div>
 
