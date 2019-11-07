@@ -27,7 +27,7 @@ class DATABASE {
 
 //return user
     function get_user(){
-        return $this->user;
+        return ($this->user);
     }
 
 //    return password
