@@ -33,7 +33,7 @@ app.controller("pagination", ["$scope", "$http", function($scope, $http){
             $scope.sizeButton = res.data.buttons;
 
             $scope.countries = res.data.data;
-            for(let i=1;i<=$scope.sizeButton-2; i++){
+            for(let i=1;i<$scope.sizeButton; i++){
                 $scope.buttoner += [i];
             }
 

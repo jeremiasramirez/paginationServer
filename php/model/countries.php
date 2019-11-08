@@ -23,13 +23,13 @@ class countries extends DATABASE{
 
             /*size of rows*/
             $sizeRows = ceil($queryLength->num_rows / 5);
-            $sizeRows_ = floor($queryLength->num_rows) - 5;
+            $sizeRows_ = ceil($queryLength->num_rows) - 5;
             if($pages==0){
                $pages = 0;
 
             }
             else{
-                $pages = ceil($pages * $sizeRows_ / 5) -1;
+                $pages = ceil( $pages *$sizeRows_  / 5)  - 5;
             }
 
 
