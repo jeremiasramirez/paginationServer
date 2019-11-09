@@ -6,4 +6,8 @@ app.config(function($routeProvider){
             controller: "pagination"
         })
 
+        .otherwise({
+            redirectTo: "/"
+        })
+
 });
